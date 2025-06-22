@@ -1,25 +1,9 @@
 # Basic cheat Buster App 
 
 ```markdown
-# Cheat Buster App 🔍
 
-
-##  Features
-
-- Fast backend powered by **Bun**
-- RESTful API built with **Express**
-- MongoDB integration with **Mongoose**
-- Email validation using **Zod**
-- Client-side interaction via **Vanilla JS**
-- Simple UI for fast lookups
-- `.env` support with **dotenv**
-- Ready-to-run seeding with test data
-
----
 
 ## Folder Structure
-
-```
 
 cheat-buster-app/
 ├── controllers/
@@ -37,14 +21,12 @@ cheat-buster-app/
 ├── seed.js
 ├── .gitignore
 
-````
+```
 
 ---
 
-##  Getting Started
 
-### Initialize Bun project
-
+### 1. Initialize Bun project
 ```bash
 bun init
 ````
@@ -62,16 +44,15 @@ bun add express mongoose zod axios dotenv
 Create a `.env` file in the root:
 
 ```env
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_connection_string{i need to replace with mongo db server with my oassword}
 PORT=3000
 ```
 
-Replace `your_mongodb_connection_string` with your actual MongoDB Atlas URI.
 
 ---
 ##  Backend Overview
 
-### 🧬 Model — `models/user.model.js`
+###  Model — `models/user.model.js`
 
 Defines the Mongoose schema for the user collection.
 
@@ -82,10 +63,6 @@ Handles validation and logic for searching users.
 ###  Routes — `routes/user.routes.js`
 
 API endpoint:
-
-```http
-GET /api/search?email=<user_email>
-```
 
 ###  Main Server — `index.js`
 
@@ -118,9 +95,8 @@ bun seed.js
 ---
 
 ## 📸 Screenshots
-
-![Home](https://github.com/user-attachments/assets/657f0f74-7e49-4746-bce6-6ee626b933c6)
 ![Terminal](https://github.com/user-attachments/assets/e738d960-d13b-4126-afc5-689095365a29)
+![Home](https://github.com/user-attachments/assets/657f0f74-7e49-4746-bce6-6ee626b933c6)
 
 ---
 
@@ -190,27 +166,8 @@ bun run index.js
 ![image](https://github.com/user-attachments/assets/9a8ae68d-756b-4387-8462-5b0fac505328)
 ![image](https://github.com/user-attachments/assets/9990bb6a-b80b-4564-ae28-78914849cf61)
 
-## Features Implemented
 
-### 1. Search by Name Enhancement
-- **Backend**: Updated `user.controller.js` with flexible search logic
-- **Frontend**: Added name input field with separate search button
-- **Validation**: Uses Zod schema to ensure either email OR name is provided
-- **Query**: Uses MongoDB `$or` with regex for case-insensitive name matching
 
-### 2. Better Loading State
-- **Button Disable**: Prevents multiple clicks during search
-- **Text Change**: Shows "Searching..." during API calls
-- **Always Reset**: Uses `.finally()` to ensure buttons are re-enabled
-- **Visual Feedback**: Opacity changes to indicate disabled state
-
-### 3. API Service Refactor
-- **Separation**: All axios logic moved to `api.js`
-- **Clean Interface**: Exported functions like `searchUserByEmail()` and `searchUserByName()`
-- **Modularity**: Main script imports and uses these functions
-- **Maintainability**: Easy to add new API endpoints
-
-## API Endpoints
 
 ### Search User
 ```
